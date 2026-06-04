@@ -66,6 +66,7 @@ public function main() returns error? {
     runtime:registerListener(hubListener);
 }
 
+
 function validateConfigs() returns boolean|error {
     if (config:HUB_SECRET_ENCRYPTION_KEY_FORMAT.equalsIgnoreCaseAscii("base64-encoded-bytes")){
        byte[]|error decodedEncryptionKey = array:fromBase64(config:HUB_SECRET_ENCRYPTION_KEY);
