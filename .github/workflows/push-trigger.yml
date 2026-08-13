@@ -30,7 +30,7 @@ on:
 
 jobs:
   build-kafka-admin-client:
-    uses: mosip/kattu/.github/workflows/maven-build.yml@master-java21
+    uses: mosip/kattu/.github/workflows/maven-build.yml@gpgupdate-masterj21
     with:
       SERVICE_LOCATION: ./kafka-admin-client
       BUILD_ARTIFACT: kafka-admin-client
@@ -45,7 +45,7 @@ jobs:
   publish-to-nexus-kafka-admin-client:
     if: "${{ !contains(github.ref, 'master') && github.event_name != 'pull_request' && github.event_name != 'release' && github.event_name != 'prerelease' && github.event_name != 'publish' }}"
     needs: build-kafka-admin-client
-    uses: mosip/kattu/.github/workflows/maven-publish-to-nexus.yml@master-java21
+    uses: mosip/kattu/.github/workflows/maven-publish-to-nexus.yml@gpgupdate-masterj21
     with:
       SERVICE_LOCATION: ./kafka-admin-client
     secrets:
